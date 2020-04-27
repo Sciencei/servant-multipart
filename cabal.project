@@ -1,0 +1,6 @@
+packages:
+  servant-multipart/
+  servant-multipart-types/
+
+flags:
+  -Wall

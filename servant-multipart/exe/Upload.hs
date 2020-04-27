@@ -12,6 +12,7 @@ import Network.Wai
 import Network.Wai.Handler.Warp
 import Servant
 import Servant.Multipart
+import Servant.Multipart.Types
 import System.Environment (getArgs)
 import Servant.Client (client, runClientM, mkClientEnv)
 import Servant.Client.Core (BaseUrl(BaseUrl), Scheme(Http))
@@ -55,7 +56,7 @@ upload multipartData = do
     forM_ (files multipartData) $ \file -> do
       let content = fdPayload file
       putStrLn $ "Content of " ++ show (fdFileName file)
-      LBS.putStr content
+      --LBS.putStr content
   return 0
 
 startServer :: IO ()
